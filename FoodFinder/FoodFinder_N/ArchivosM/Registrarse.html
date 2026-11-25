@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFinder - Crear cuenta</title>
+    <link rel="stylesheet" href="estiloso.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="brand">
+            <span class="logo-icon">&#127860;</span>
+            <span>FoodFinder</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="misreservas.html" class="nav-link">Mis reservas</a>
+            <a href="favoritos.html" class="nav-link">Favoritos</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="inicio_sesion.html" class="link-login">Iniciar sesión</a>
+            <a href="Registrarse.html" class="btn-orange">Registrarse</a>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL DIVIDIDO EN 2 COLUMNAS -->
+    <div class="auth-layout">
+
+        <!-- PRIMERA MITAD (Compartida con Paso 2) -->
+        <div class="auth-left-bg">
+            <div class="hero-brand">
+                <span class="logo-icon">Ψ</span>
+                <span>FoodFinder</span>
+            </div>
+
+            <div>
+                <h1 class="hero-title">Únete y empieza<br>a explorar</h1>
+                <p class="hero-subtitle"><strong>Crea tu cuenta gratis y reserva en los mejores restaurantes de Bogotá en segundos.</strong></p>
+
+                <ul class="benefits-list">
+                    <li><strong>⚡ Reserva en segundos, sin llamadas</strong></li>
+                    <li><strong>🔔 Recordatorios automáticos por FoodFinder</strong></li>
+                    <li><strong>⭐ Guarda tus restaurantes favoritos</strong></li>
+                </ul>
+            </div>
+
+            <div class="step-indicator">
+                <span class="step-badge-active">1 Tus datos</span>
+                <span class="step-line">——</span>
+                <span class="step-text-muted">2 Seguridad</span>
+            </div>
+        </div>
+
+        <!-- SEGUNDA MITAD: Formulario Paso 1 -->
+        <div class="auth-right">
+            <div class="form-box">
+                <a href="index.html" class="back-link">&lt; Volver</a>
+
+                <h2 class="form-title">Crea tu cuenta</h2>
+                <p class="form-subtitle">Paso 1 de 2 · Ingresa tus datos personales</p>
+
+                <div class="role-switcher">
+                    <input type="radio" class="role-radio" name="rol" id="rol-cliente" checked>
+                    <label for="rol-cliente" class="role-btn">Soy cliente</label>
+
+                    <input type="radio" class="role-radio" name="rol" id="rol-negocio">
+                    <label for="rol-negocio" class="role-btn">Soy negocio</label>
+                </div>
+
+                <form action="registrarse2.html" method="get">
+                    <div class="row-2">
+                        <div class="col-half">
+                            <label class="form-label-xs">NOMBRE *</label>
+                            <input type="text" class="form-control" placeholder="Valentina" required>
+                        </div>
+                        <div class="col-half">
+                            <label class="form-label-xs">APELLIDO *</label>
+                            <input type="text" class="form-control" placeholder="Martínez" required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="form-label-xs">CORREO ELECTRÓNICO *</label>
+                        <input type="email" class="form-control" placeholder="tu@correo.com" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="form-label-xs">TELÉFONO CELULAR *</label>
+                        <input type="tel" class="form-control" placeholder="+57 300 000 0000" required>
+                    </div>
+
+                    <div class="row-2">
+                        <div class="col-half">
+                            <label class="form-label-xs">FECHA DE NACIMIENTO</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-half">
+                            <label class="form-label-xs">GÉNERO (OPCIONAL)</label>
+                            <select class="form-select">
+                                <option selected>Prefiero no decir</option>
+                                <option>Femenino</option>
+                                <option>Masculino</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grupo-terminos">
+                        <label class="checkbox-terminos">
+                            <input type="checkbox" name="acepta_terminos" required>
+                            <span>Acepto los términos y condiciones de uso de FoodFinder</span>
+                        </label>
+                        <a href="terminos.html" target="_blank" rel="noopener noreferrer" class="btn-ver-terminos">
+                            Leer términos y condiciones
+                        </a>
+                    </div>
+
+                    <button type="submit" class="btn-orange btn-submit-full">
+                        Continuar →
+                    </button>
+
+                    <p class="footer-login">
+                        ¿Ya tienes cuenta? <a href="inicio_sesion.html">Inicia sesión</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
