@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFinder - Tu mesa perfecta, a un clic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estiloso.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="brand">
+            <span class="logo-icon">&#127860;</span>
+            <span>FoodFinder</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
+            <a href="misreservas.html" class="nav-link">Mis reservas</a>
+            <a href="favoritos.html" class="nav-link">Favoritos</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="inicio_sesion.html" class="link-login">Iniciar sesión</a>
+            <a href="Registrarse.html" class="btn-orange">Registrarse</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+
+    
+
+    <section class="hero">
+        <div id="carouselFondo" class="carousel slide carousel-fade fondo-carousel"
+             data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false"
+             aria-hidden="true">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../img/Restaurante1.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="../img/Restaurante2.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="../img/Restaurante3.jpg" class="d-block w-100" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">            <label for="location-toggle" class="location-badge">
+                <span>&#128205;</span>
+                <span>BOGOTÁ · SUBA</span>
+                <span>&#9662;</span>
+            </label>
+
+            <h1><span class="text-orange">Tu mesa perfecta,</span><br><span class="text-orange">a un clic</span></h1>
+            <p class="hero-subtitle">
+                Descubre los mejores restaurantes de Suba y reserva tu mesa al instante.
+            </p>
+            
+<!-- BUSCADOR Y FILTROS -->
+<div class="buscador-container" id="buscar">
+
+    <form class="buscador-form" action="#restaurantes" method="get">
+
+        <span class="buscador-icon">⌕</span>
+
+        <input
+            type="search"
+            id="busqueda-restaurantes"
+            name="q"
+            placeholder="Restaurante, barrio o tipo de comida..."
+            aria-label="Buscar restaurante"
+        >
+
+        <details class="filtros-dropdown">
+            <summary class="buscador-filtro-btn">☷ Filtros</summary>
+
+            <div class="buscador-filtros" id="filtros">
+                <div class="filtro-grupo">
+                    <h4>TIPO DE COMIDA</h4>
+                    <div class="filtro-categorias">
+                        <label class="filtro-opcion"><input type="checkbox" name="cocina" value="colombiana"><span>Colombiana</span></label>
+                        <label class="filtro-opcion"><input type="checkbox" name="cocina" value="rapida"><span>Rápida</span></label>
+                        <label class="filtro-opcion"><input type="checkbox" name="cocina" value="italiana"><span>Italiana</span></label>
+                        <label class="filtro-opcion"><input type="checkbox" name="cocina" value="mexicana"><span>Mexicana</span></label>
+                        <label class="filtro-opcion"><input type="checkbox" name="cocina" value="asiatica"><span>Asiática</span></label>
+                        <label class="filtro-opcion"><input type="checkbox" name="cocina" value="postres"><span>Postres</span></label>
+                        <label class="filtro-opcion"><input type="checkbox" name="cocina" value="cafe"><span>Café</span></label>
+                        <label class="filtro-opcion"><input type="checkbox" name="cocina" value="vegana"><span>Vegana</span></label>
+                        <label class="filtro-opcion"><input type="checkbox" name="cocina" value="mariscos"><span>Mariscos</span></label>
+                    </div>
+                </div>
+
+                <div class="filtro-grupo">
+                    <h4>PRECIO</h4>
+                    <div class="filtro-categorias">
+                        <label class="filtro-opcion"><input type="checkbox" name="precio" value="economico"><span>$</span></label>
+                        <label class="filtro-opcion"><input type="checkbox" name="precio" value="moderado"><span>$$</span></label>
+                        <label class="filtro-opcion"><input type="checkbox" name="precio" value="alto"><span>$$$</span></label>
+                    </div>
+                </div>
+
+                <div class="filtro-adicional">
+                    <label>
+                        <input type="checkbox" name="disponible" value="1">
+                        Disponible para reservar
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="promociones" value="1">
+                        Promociones
+                    </label>
+                </div>
+            </div>
+        </details>
+
+        <button type="submit" class="buscador-btn">Buscar</button>
+
+    </form>
+</div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN RECOMENDACIONES DE RESTAURANTES -->
+    <main id="restaurantes" class="container">
+        <div class="section-header">
+            <div>
+                <h2>Restaurantes en Suba</h2>
+                <p class="results-info">
+                    6 resultados &nbsp;
+                    <a href="#ubicacion" class="link-orange">&#128205; Cambiar ubicación</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Grid de 6 restaurantes -->
+        <div class="restaurants-grid">
+
+            <!-- Restaurante 1 -->
+            <article class="restaurant-card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Parrilla de La Fogata de Suba" loading="lazy" decoding="async">
+                    <div class="card-tags">
+                        <span class="tag-pill">Parrilla</span>
+                        <span class="tag-pill">Familiar</span>
+                    </div>
+                    <span class="badge-available">• Disponible</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-title-row">
+                        <h3><a href="detalle.html">La Fogata de Suba</a></h3>
+                        <button type="button" class="fav-btn" title="Guardar en favoritos">&#9825;</button>
+                    </div>
+                    <p class="card-meta">Parrilla Colombiana · Suba Centro</p>
+                    <p class="card-price">Menú $12k – $85k por persona</p>
+                    <div class="card-rating">
+                        <span class="text-orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <strong>4.8</strong>
+                        <span class="reviews-count">(312)</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Restaurante 2 -->
+            <article class="restaurant-card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Pasta de Nonna Roma" loading="lazy" decoding="async">
+                    <div class="card-tags">
+                        <span class="tag-pill">Pizza</span>
+                        <span class="tag-pill">Pasta</span>
+                    </div>
+                    <span class="badge-available">• Disponible</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-title-row">
+                        <h3><a href="detalle.html">Nonna Roma</a></h3>
+                        <button type="button" class="fav-btn" title="Guardar en favoritos">&#9825;</button>
+                    </div>
+                    <p class="card-meta">Italiana · Suba Rincón</p>
+                    <p class="card-price">Menú $42k – $52k por persona</p>
+                    <div class="card-rating">
+                        <span class="text-orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <strong>4.6</strong>
+                        <span class="reviews-count">(198)</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Restaurante 3 -->
+            <article class="restaurant-card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Plato tradicional de El Rincón Sabanero" loading="lazy" decoding="async">
+                    <div class="card-tags">
+                        <span class="tag-pill">Tradicional</span>
+                        <span class="tag-pill">Ajiaco</span>
+                    </div>
+                    <span class="badge-available">• Disponible</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-title-row">
+                        <h3><a href="detalle.html">El Rincón Sabanero</a></h3>
+                        <button type="button" class="fav-btn" title="Guardar en favoritos">&#9825;</button>
+                    </div>
+                    <p class="card-meta">Bogotana · Suba Compartir</p>
+                    <p class="card-price">Menú $22k – $34k por persona</p>
+                    <div class="card-rating">
+                        <span class="text-orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <strong>4.7</strong>
+                        <span class="reviews-count">(445)</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Restaurante 4 -->
+            <article class="restaurant-card">
+                <div class="card-img-container unavailable">
+                    <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Sushi de Sakura Nikkei" loading="lazy" decoding="async">
+                    <div class="card-tags">
+                        <span class="tag-pill">Sushi</span>
+                        <span class="tag-pill">Nikkei</span>
+                    </div>
+                    <span class="badge-unavailable">Sin disponibilidad</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-title-row">
+                        <h3><a href="detalle.html">Sakura Nikkei</a></h3>
+                        <button type="button" class="fav-btn" title="Guardar en favoritos">&#9825;</button>
+                    </div>
+                    <p class="card-meta">Japonesa · Fusión · Niza</p>
+                    <p class="card-price">Menú $48k – $75k por persona</p>
+                    <div class="card-rating">
+                        <span class="text-orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <strong>4.9</strong>
+                        <span class="reviews-count">(276)</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Restaurante 5 -->
+            <article class="restaurant-card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Ensalada de Verde Tierra" loading="lazy" decoding="async">
+                    <div class="card-tags">
+                        <span class="tag-pill">Vegano</span>
+                        <span class="tag-pill">Orgánico</span>
+                    </div>
+                    <span class="badge-available">• Disponible</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-title-row">
+                        <h3><a href="detalle.html">Verde Tierra</a></h3>
+                        <button type="button" class="fav-btn" title="Guardar en favoritos">&#9825;</button>
+                    </div>
+                    <p class="card-meta">Saludable · Autor · Colina Campestre</p>
+                    <p class="card-price">Menú $28k – $45k por persona</p>
+                    <div class="card-rating">
+                        <span class="text-orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <strong>4.7</strong>
+                        <span class="reviews-count">(164)</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Restaurante 6 -->
+            <article class="restaurant-card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Mariscos de Puerto Pacífico" loading="lazy" decoding="async">
+                    <div class="card-tags">
+                        <span class="tag-pill">Mariscos</span>
+                        <span class="tag-pill">Ceviche</span>
+                    </div>
+                    <span class="badge-available">• Disponible</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-title-row">
+                        <h3><a href="detalle.html">Puerto Pacífico</a></h3>
+                        <button type="button" class="fav-btn" title="Guardar en favoritos">&#9825;</button>
+                    </div>
+                    <p class="card-meta">Pescados y Mariscos · Suba</p>
+                    <p class="card-price">Menú $45k – $82k por persona</p>
+                    <div class="card-rating">
+                        <span class="text-orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <strong>4.8</strong>
+                        <span class="reviews-count">(389)</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <span class="logo-icon">&#127860;</span>
+            <span>FoodFinder</span>
+        </div>
+        <p class="footer-copy">© 2026 FoodFinder · Bogotá · Todos los derechos reservados</p>
+        <a href="administrador.html" class="footer-admin-link">Acceso administrador</a>
+    </footer>
+
+    <!-- Selector de ubicación (solo HTML y CSS) -->
+    <input type="checkbox" id="location-toggle" class="location-toggle" hidden>
+
+    <div class="location-modal" id="location-modal">
+        <label for="location-toggle" class="location-modal-backdrop" aria-label="Cerrar"></label>
+        <div class="location-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="location-modal-title">
+            <div class="location-modal-header">
+                <h2 id="location-modal-title">Cambiar ubicación</h2>
+                <label for="location-toggle" class="location-modal-close" aria-label="Cerrar">&times;</label>
+            </div>
+            <div class="location-modal-body">
+                <div class="location-section">
+                    <p class="location-section-title">UBICACIÓN ACTUAL</p>
+                    <div class="location-current-card is-selected">
+                        <span class="location-pin-icon">&#128205;</span>
+                        <span class="location-current-text">
+                            <strong>Suba</strong>
+                            <small>Seleccionado actualmente</small>
+                        </span>
+                        <span class="location-check">&#10003;</span>
+                    </div>
+                </div>
+
+                <div class="location-section location-group">
+                    <p class="location-section-title">NORTE</p>
+                    <label class="location-item is-selected"><input type="radio" name="ubicacion" checked hidden><span class="location-item-pin">&#128205;</span><span>Suba, Bogotá</span><span class="location-item-check">&#10003;</span></label>
+                    <label class="location-item"><input type="radio" name="ubicacion" hidden><span class="location-item-pin">&#128205;</span><span>Usaquén, Bogotá</span><span class="location-item-check">&#10003;</span></label>
+                    <label class="location-item"><input type="radio" name="ubicacion" hidden><span class="location-item-pin">&#128205;</span><span>Chapinero, Bogotá</span><span class="location-item-check">&#10003;</span></label>
+                    <label class="location-item"><input type="radio" name="ubicacion" hidden><span class="location-item-pin">&#128205;</span><span>Engativá, Bogotá</span><span class="location-item-check">&#10003;</span></label>
+                </div>
+
+                <div class="location-section location-group">
+                    <p class="location-section-title">CENTRO</p>
+                    <label class="location-item"><input type="radio" name="ubicacion" hidden><span class="location-item-pin">&#128205;</span><span>Teusaquillo, Bogotá</span><span class="location-item-check">&#10003;</span></label>
+                    <label class="location-item"><input type="radio" name="ubicacion" hidden><span class="location-item-pin">&#128205;</span><span>Barrios Unidos, Bogotá</span><span class="location-item-check">&#10003;</span></label>
+                    <label class="location-item"><input type="radio" name="ubicacion" hidden><span class="location-item-pin">&#128205;</span><span>Puente Aranda, Bogotá</span><span class="location-item-check">&#10003;</span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
